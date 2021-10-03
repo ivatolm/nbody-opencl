@@ -70,4 +70,10 @@ int main() {
   }
 l_exit:
   window.close();
+  clReleaseKernel(data_cl.kernel);
+  clReleaseMemObject(mem_pos);
+  clReleaseMemObject(mem_vel);
+  clReleaseMemObject(mem_npos);
+  clReleaseCommandQueue(data_cl.command_queue);
+  clReleaseContext(data_cl.context);
 }
